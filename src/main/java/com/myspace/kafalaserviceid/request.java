@@ -6,12 +6,16 @@ package com.myspace.kafalaserviceid;
 
 @javax.persistence.Entity
 @javax.persistence.Table(name = "request")
-public class request extends org.drools.persistence.jpa.marshaller.VariableEntity implements java.io.Serializable {
+public class request
+		extends
+			org.drools.persistence.jpa.marshaller.VariableEntity
+		implements
+			java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue(generator = "REQUEST_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "REQUEST_ID_GENERATOR")
 	@javax.persistence.SequenceGenerator(name = "REQUEST_ID_GENERATOR", sequenceName = "REQUEST_ID_SEQ")
 	private java.lang.Long id;
 
@@ -26,6 +30,8 @@ public class request extends org.drools.persistence.jpa.marshaller.VariableEntit
 	private java.lang.String requestResource;
 
 	private java.lang.String requestID;
+
+	private java.lang.Integer processInstanceId;
 
 	public request() {
 	}
@@ -86,10 +92,19 @@ public class request extends org.drools.persistence.jpa.marshaller.VariableEntit
 		this.requestID = requestID;
 	}
 
+	public java.lang.Integer getProcessInstanceId() {
+		return this.processInstanceId;
+	}
+
+	public void setProcessInstanceId(java.lang.Integer processInstanceId) {
+		this.processInstanceId = processInstanceId;
+	}
+
 	public request(java.lang.Long id, java.lang.String applicantName,
 			java.lang.String departmentName,
 			java.lang.String administrationName, java.lang.String serviceName,
-			java.lang.String requestResource, java.lang.String requestID) {
+			java.lang.String requestResource, java.lang.String requestID,
+			java.lang.Integer processInstanceId) {
 		this.id = id;
 		this.applicantName = applicantName;
 		this.departmentName = departmentName;
@@ -97,6 +112,7 @@ public class request extends org.drools.persistence.jpa.marshaller.VariableEntit
 		this.serviceName = serviceName;
 		this.requestResource = requestResource;
 		this.requestID = requestID;
+		this.processInstanceId = processInstanceId;
 	}
 
 }
