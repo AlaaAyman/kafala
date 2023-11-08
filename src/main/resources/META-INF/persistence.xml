@@ -4,6 +4,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:jboss/datasources/MyExternalDS</jta-data-source>
         <class>com.myspace.kafalaserviceid.request</class>
+        <class>org.drools.persistence.jpa.marshaller.MappedVariable</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
