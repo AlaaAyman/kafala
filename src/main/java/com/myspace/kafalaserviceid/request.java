@@ -6,7 +6,7 @@ package com.myspace.kafalaserviceid;
 
 @javax.persistence.Entity
 @javax.persistence.Table(name = "request")
-public class request implements java.io.Serializable {
+public class request extends org.drools.persistence.jpa.marshaller.VariableEntity implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
